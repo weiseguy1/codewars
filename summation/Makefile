@@ -2,7 +2,7 @@ CC=gcc
 LIBS=-lcriterion
 TARGET=summation
 
-all: $(TARGET)
+build: $(TARGET)
 
 $(TARGET): $(TARGET).c
 	$(CC) -o $(TARGET) $(TARGET).c $(LIBS)
@@ -10,3 +10,6 @@ $(TARGET): $(TARGET).c
 clean:
 	$(RM) $(TARGET)
 
+.PHONY: run
+run: $(TARGET)
+	./$(TARGET)
